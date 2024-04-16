@@ -9,6 +9,6 @@ public class Application01 {
         System.out.println("main() 시작됨....");
     }
     public void main() {
-        
+        System.out.println(("meathoadA()를 호출함"));
     }
 }
