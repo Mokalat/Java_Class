@@ -17,10 +17,17 @@ public class Application02 {
             이 때 전달하는 값을 전달자인(argument)라고 부르고
             메소드 선언부 괄호안에 전달 인자를 받기 위해 선언하는 변수를 매개변수(parameter)라고 부른다.
         */
+
+        int age = 20;
+
         Application02 app1 = new Application02();
-        app1.testMethod(40);
+        app1.testMethod(age);
+
     }
+
     public void testMethod(int age) {
-        System.out.println(" 당신의 나이 " + age + "새 입니다.");
+        System.out.println(" 당신의 나이 " + age + "세 입니다.");
     }
+
+
 }
