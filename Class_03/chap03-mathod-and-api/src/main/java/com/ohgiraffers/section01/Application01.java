@@ -18,6 +18,6 @@ public class Application01 {
         System.out.println(("meathoadA()를 호출함"));
     }
     public void meathoadB() {
-        System.out.println("meathoadB()를 호출해볼까? git짜증나");
+        System.out.println("meathoadB()를 호출해볼까? ");
     }
 }
