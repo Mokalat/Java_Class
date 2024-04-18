@@ -1,12 +1,11 @@
-package com.ohgiraffers.setion01.conditional;
-
-import java.util.Scanner;
+package com.ohgiraffers.section01.conditional;
 
 public class Application01 {
     public static void main(String[] args) {
-        A_if aIf = new A_if();
-        aIf.testSimpleIfStatement();
-
+//        A_if aIf = new A_if();
+//        aIf.testSimpleIfStatement();
+        D_switch Dsw = new D_switch();
+        Dsw.testSimpleSwitchStatement();
     }
     /*
         계산기 만들기
@@ -25,6 +24,7 @@ public class Application01 {
         6. 연산을 진행한다.
         7. 반환한다.
     */
+
 
 
 

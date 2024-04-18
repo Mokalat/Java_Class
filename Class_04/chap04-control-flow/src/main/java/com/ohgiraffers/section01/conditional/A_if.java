@@ -1,4 +1,4 @@
-package com.ohgiraffers.setion01.conditional;
+package com.ohgiraffers.section01.conditional;
 
 import java.util.Scanner;
 
@@ -18,12 +18,12 @@ public class A_if {
         int num = sc.nextInt();
 
         System.out.println("연산기호를 입력해주세요 : ");
-        char ch = sc.next().charAt(0);
+        char ch = sc.nexte().charAt(0);
 
         System.out.println("값을 입력해주세요 :");
         int num2 = sc.nextInt();*/
 
-        /* Scanner sc= new Scanner(System.in);
+        /* Scanner sc= new Scanner(System.in);x`
          String input = sc.nextLine();
          String[] target = input.split(" ");
          int result = 0; */
