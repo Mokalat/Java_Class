@@ -2,8 +2,9 @@ package com.ohgiraffers.section02.looping;
 
 public class Application01 {
   public static void main(String[] args) {
-      A_for aFor = new A_for();
+        C_dowhile cWhlie = new C_dowhile();
 //      aFor.testSimpleForStatement();
-      aFor.gugudan();
+//      bWhlie.testSimleWhileStatement();
+        cWhlie.testSimpledoWhileStatement();
   }
 }
