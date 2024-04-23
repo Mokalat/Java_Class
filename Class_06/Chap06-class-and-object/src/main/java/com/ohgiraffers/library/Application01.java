@@ -61,7 +61,7 @@ public class Application01 {
                 break;
                 case 3 : {
 
-                    Book Book = new bookSaved();
+//                    Book Book = new bookSaved();
 
                     String bookSavedsName = "룬의 아이들";
                     String bookSavedNumber = "123-55-123ㅎ";
