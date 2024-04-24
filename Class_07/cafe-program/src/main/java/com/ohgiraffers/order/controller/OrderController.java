@@ -1,6 +1,7 @@
 package com.ohgiraffers.order.controller;
 
 import com.ohgiraffers.Application;
+import com.ohgiraffers.order.dao.OrderRepository;
 import com.ohgiraffers.order.dto.OrderDTO;
 import com.ohgiraffers.order.service.OrderService;
 
@@ -8,8 +9,7 @@ import java.util.ArrayList;
 
 public class OrderController {
 
-    private OrderService orderService = new OrderService();
-
+    private final OrderService orderService = new OrderService();
     public String order(OrderDTO orderDTO){
         // 컨트롤러 계층에서는 각 기능을 수행하기 위한 필수값의 누락이 있는지 검사한다.
         if(orderDTO.getMenuName().equals("")){
@@ -34,12 +34,16 @@ public class OrderController {
     }
 
     public String orderRead(){
-        System.out.println();
 
-        return "주문 조회";
+        orderService.orderRead();
+
+
+        return orderService.orderRead();
     }
 
     public String orderDetail(){
         return "주문 상세조회";
     }
+
+  
 }

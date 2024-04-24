@@ -1,11 +1,15 @@
 package com.ohgiraffers.order.dao;
 
+import com.ohgiraffers.Application;
+import com.ohgiraffers.order.controller.OrderController;
 import com.ohgiraffers.order.dto.OrderDTO;
+import com.ohgiraffers.order.service.OrderService;
 
 import java.util.ArrayList;
 
 public class OrderRepository {
-    ArrayList orders = new ArrayList();
+
+    private final ArrayList orders = new ArrayList();
 
     public String order(OrderDTO orderDTO){
         //0
@@ -18,5 +22,13 @@ public class OrderRepository {
         }
 
         return "등록성공";
+
     }
+    public String orderRead(){
+
+        return " " + this.orders;
+    }
+
+
+
 }

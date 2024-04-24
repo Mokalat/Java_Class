@@ -1,6 +1,7 @@
 package com.ohgiraffers;
 
 import com.ohgiraffers.order.controller.OrderController;
+import com.ohgiraffers.order.dao.OrderRepository;
 import com.ohgiraffers.order.dto.OrderDTO;
 
 import java.util.Scanner;
@@ -12,7 +13,6 @@ public class Application {
         OrderController orderController = new OrderController();
         boolean order = true;
         String result = "";
-
         while(order){
             System.out.println("1. 주문 등록");
             System.out.println("2. 주문 삭제");
@@ -22,19 +22,22 @@ public class Application {
             System.out.print("어떤 메뉴를 동작하시겠나요? ");
             int input = sc.nextInt();
             sc.nextLine();
-            OrderDTO orderDTO = new OrderDTO();
+
 
             switch (input){
                 case 1 : // 주문등록
                     System.out.print("주문할 메뉴 이름을 등록해주세요 : ");
-                    orderDTO.setMenuName(sc.nextLine());
+                    String menuName= sc.nextLine();
+
                     System.out.println("수량을 입력해주세요 :");
                     int quantity = sc.nextInt();
+
                     System.out.println("가격을 입력해주세요 : ");
                     int price = sc.nextInt();
-                    orderDTO.setQuantity(quantity, price);
 
+                    OrderDTO orderDTO = new OrderDTO(menuName,quantity,price);
                     result = orderController.order(orderDTO);
+
                     break;
                 case 2 : // 주문삭제
                     orderController.orderDelete();
@@ -46,7 +49,8 @@ public class Application {
                     orderController.orderDetail();
                     break;
                 case 5 :// 주문 전체조회
-                    orderController.orderRead();
+
+                   result=orderController.orderRead();
                     break;
                 default:
                     System.out.println("입력이 잘못되었습니다.");
@@ -57,6 +61,9 @@ public class Application {
 
             System.out.print("주문을 종료하시겠나요?");
             order = sc.nextBoolean();
+
         }
+
     }
+
 }
