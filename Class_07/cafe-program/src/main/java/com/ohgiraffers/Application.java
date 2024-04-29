@@ -26,17 +26,24 @@ public class Application {
 
             switch (input){
                 case 1 : // 주문등록
-                    System.out.print("주문할 메뉴 이름을 등록해주세요 : ");
-                    String menuName= sc.nextLine();
+                    System.out.println("몇개의 음료를 주문하시겠나요? : ");
+                    int cnt = sc.nextInt();
+                    sc.nextLine();
+                    OrderDTO[] orders = new OrderDTO[cnt];
 
-                    System.out.println("수량을 입력해주세요 :");
-                    int quantity = sc.nextInt();
+                    for(int i = 0; i < orders.length; i++){
+                        System.out.print("주문할 메뉴 이름을 등록해주세요 : ");
+                        String menuName= sc.nextLine();
 
-                    System.out.println("가격을 입력해주세요 : ");
-                    int price = sc.nextInt();
+                        System.out.println("수량을 입력해주세요 :");
+                        int quantity = sc.nextInt();
 
-                    OrderDTO orderDTO = new OrderDTO(menuName,quantity,price);
-                    result = orderController.order(orderDTO);
+                        System.out.println("가격을 입력해주세요 : ");
+                        int price = sc.nextInt();
+
+                        orders[i] = new OrderDTO(menuName, quantity, price);
+                        result = orderController.order(orders);
+                    }
 
                     break;
                 case 2 : // 주문삭제
@@ -50,7 +57,7 @@ public class Application {
                     break;
                 case 5 :// 주문 전체조회
 
-                   result=orderController.orderRead();
+                    result=orderController.orderRead();
                     break;
                 default:
                     System.out.println("입력이 잘못되었습니다.");

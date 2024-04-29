@@ -10,18 +10,20 @@ import java.util.ArrayList;
 public class OrderController {
 
     private final OrderService orderService = new OrderService();
-    public String order(OrderDTO orderDTO){
+    public String order(OrderDTO[] orders){
         // 컨트롤러 계층에서는 각 기능을 수행하기 위한 필수값의 누락이 있는지 검사한다.
-        if(orderDTO.getMenuName().equals("")){
-            return "메뉴를 정해주세요";
-        }
 
-        if(orderDTO.getQuantity() <= 0){
-            return "수량을 입력해주세요";
+        for(OrderDTO orderDTO : orders){
+            if(orderDTO.getMenuName().equals(" ")){
+                return "메뉴를 정해주세요";
+            }
+            if(orderDTO.getQuantity() <= 0){
+                return "수량을 입력해주세요";
+            }
         }
 
         // service 로직으로 넘김
-        String result = orderService.order(orderDTO);
+        String result = orderService.order(orders);
         return result;
     }
 
@@ -30,7 +32,8 @@ public class OrderController {
     }
 
     public  String orderDelete(){
-        return "주문 삭제";
+        String Delete = orderService.Delete();
+        return Delete;
     }
 
     public String orderRead(){
